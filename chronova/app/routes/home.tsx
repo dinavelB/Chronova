@@ -3,8 +3,12 @@ import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Login | ChronoVA" },
+    {
+      name: "description",
+      content:
+        "Sign in to your ChronoVA account to track time and manage tasks.",
+    },
   ];
 }
 
