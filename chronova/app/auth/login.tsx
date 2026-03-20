@@ -6,8 +6,11 @@ import { Card, CardHeader, CardTitle, CardContent } from "~/components/ui/card";
 import { FieldError, FieldGroup, FieldLabel } from "~/components/ui/field";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button"; // Add this
-
+import { useLogin } from "lib/customhooks/useLogin";
 export default function BugReportForm() {
+  // react hook rule: hooks are always top of the component
+  const mutation = useLogin();
+
   const {
     register, // register the input val
     handleSubmit, // he submit event
@@ -20,8 +23,8 @@ export default function BugReportForm() {
     },
   });
 
-  function onSubmit(data: LoginFormData) {
-    console.log(data);
+  function onSubmit(userData: LoginFormData) {
+    mutation.mutate(userData);
   }
 
   return (
