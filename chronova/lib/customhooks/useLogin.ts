@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { LoginService } from "modules/services/login";
+import { LoginService } from "modules/services/register";
 
 // a custom hook is called by the function name
 //  it returns a predefined hook
