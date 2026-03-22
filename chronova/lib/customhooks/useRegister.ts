@@ -5,7 +5,7 @@ import { LoginService } from "modules/services/register";
 //  it returns a predefined hook
 // use useQuery if the request is get
 // use useMutation if the request is patch, delete, and post
-export function useLogin() {
+export function useRegister() {
   return useMutation({
     mutationFn: LoginService,
     onSuccess: (data) => {
