@@ -24,7 +24,7 @@ export default function BugReportForm() {
   });
 
   function onSubmit(userData: RegisteFormData) {
-    mutation.mutate(userData);
+    mutation.mutate(userData); // builtin method in mutation
   }
   // pass the error from mutation backend response
   const errorMessage = getErrorMessage(mutation.error);

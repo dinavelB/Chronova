@@ -21,4 +21,6 @@ export const loginSchema = z.object({
     ),
 });
 
+//type interference
+//transforms into type
 export type RegisteFormData = z.infer<typeof loginSchema>;

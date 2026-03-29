@@ -7,10 +7,12 @@ import {
 
 // layout is the parent
 // a component will be render depends on the url path
+// frontend route
 export default [
   index("routes/home.tsx"),
-  layout("./auth/layout.tsx", [
-    route("auth/login", "./auth/login.tsx"),
-    route("auth/register", "./auth/register.tsx"),
+  route("auth", "routes/layout.tsx", [
+    route("login", "./auth/login.tsx"),
+    route("otp", "./auth/otp.tsx"),
+    route("register", "./auth/register.tsx"),
   ]),
 ] satisfies RouteConfig;
