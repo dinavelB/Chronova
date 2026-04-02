@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -155,6 +156,12 @@ body {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
+  }
+
+  @layer utilities {
+    .font-header-form {
+      font-family: "Manjari";
     }
   }
 }

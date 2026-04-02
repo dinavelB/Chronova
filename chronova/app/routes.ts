@@ -10,6 +10,7 @@ import {
 // frontend route
 export default [
   index("routes/home.tsx"),
+  //nested route
   route("auth", "routes/layout.tsx", [
     route("login", "./auth/login.tsx"),
     route("otp", "./auth/otp.tsx"),

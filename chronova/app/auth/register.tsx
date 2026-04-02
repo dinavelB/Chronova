@@ -31,9 +31,18 @@ export default function BugReportForm() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md px-2 py-15">
-        <CardHeader>
-          <CardTitle className="text-center">Signup to Chronova</CardTitle>
+      <Card className="w-2xl max-w-xl py-15 px-10">
+        <CardHeader className="flex flex-col gap-2">
+          <CardTitle className="text-left text-2xl font-extrabold font-header-form">
+            Create your account
+          </CardTitle>
+          <p className="text-lg font-header-form">
+            Create your Chronova account to get started
+          </p>
+          <div className="h-12 border-2 w-full mt-5 radius rounded-md flex items-center px-10 ">
+            <img src="../../public/Google.jpg" alt="" />
+            <p className="text-center ml-23">Sign up with google</p>
+          </div>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
