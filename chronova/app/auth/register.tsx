@@ -8,8 +8,10 @@ import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import { useRegister } from "lib/customhooks/useRegister";
 import { getErrorMessage } from "lib/util/register.res.error";
+import { Navigate, useNavigate } from "react-router";
 export default function BugReportForm() {
   const mutation = useRegister();
+  const nav = useNavigate();
 
   const {
     register,
@@ -30,27 +32,60 @@ export default function BugReportForm() {
   const errorMessage = getErrorMessage(mutation.error);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <Card className="w-2xl max-w-xl py-15 px-10">
+    <div className="flex min-h-screen items-center justify-center bg-custom-image">
+      <Card className="w-3xl max-w-xl py-15 px-10">
+        <div
+          className="flex items-center font-header-form text-lg cursor-pointer"
+          onClick={() => nav("/")}
+        >
+          <img src="/Back.svg" alt="" />
+          <p>Back to landing page</p>
+        </div>
         <CardHeader className="flex flex-col gap-2">
-          <CardTitle className="text-left text-2xl font-extrabold font-header-form">
+          <CardTitle className="text-left text-2xl font-extrabold font-header-form mt-2">
             Create your account
           </CardTitle>
           <p className="text-lg font-header-form">
             Create your Chronova account to get started
           </p>
           <div className="h-12 border-2 w-full mt-5 radius rounded-md flex items-center px-10 ">
-            <img src="../../public/Google.jpg" alt="" />
+            <img src="/Google.jpg" alt="" />
             <p className="text-center ml-23">Sign up with google</p>
           </div>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <FieldGroup className="flex flex-row gap-4 mt-5">
+              <div className="flex-1">
+                <FieldLabel>Firstname</FieldLabel>
+                <Input
+                  className="h-10"
+                  placeholder="Enter your firstname"
+                  {...register("firstname")}
+                />
+                {errors.firstname && (
+                  <FieldError>{errors.firstname.message}</FieldError>
+                )}
+              </div>
+
+              <div className="flex-1">
+                <FieldLabel>Lastname</FieldLabel>
+                <Input
+                  className="h-10"
+                  placeholder="Enter your lastname"
+                  {...register("lastname")}
+                />
+                {errors.lastname && (
+                  <FieldError>{errors.lastname.message}</FieldError>
+                )}
+              </div>
+            </FieldGroup>
+
             <FieldGroup>
               <FieldLabel>Email</FieldLabel>
               <Input
                 className="h-10"
-                placeholder="Enter your email"
+                placeholder="sampleemail@gmail.com"
                 {...register("email")}
               />
               {errors.email && <FieldError>{errors.email.message}</FieldError>}
@@ -76,12 +111,22 @@ export default function BugReportForm() {
               </div>
             )}
 
+            <p className="font-header-form text-lg mt-10">
+              Already have an account?{" "}
+              <span
+                className="text-primary cursor-pointer"
+                onClick={() => nav("/auth/login")}
+              >
+                Login
+              </span>
+            </p>
+
             <Button
               type="submit"
-              className="w-full h-12"
+              className="w-full h-12 font-header-form text-md"
               disabled={mutation.isPending}
             >
-              {mutation.isPending ? "Logging in..." : "Login"}
+              {mutation.isPending ? "Creating account..." : "Create Acccount"}
             </Button>
           </form>
         </CardContent>
