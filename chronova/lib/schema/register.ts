@@ -23,13 +23,11 @@ export const loginSchema = z.object({
   firstname: z
     .string()
     .min(1, "firstname is required")
-    .min(8, "firstname must be at least 8 characters")
     .max(100, "firstname must be at most 100 characters"),
 
   lastname: z
     .string()
     .min(1, "lastname is required")
-    .min(8, "lastname must be at least 8 characters")
     .max(100, "lastname must be at most 100 characters"),
 });
 
