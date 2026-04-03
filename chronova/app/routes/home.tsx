@@ -65,7 +65,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/auth/register"
+                href="/auth/login"
                 className="inline-flex items-center justify-center rounded-md border border-border bg-card px-8 py-3 text-lg font-medium text-card-foreground shadow-sm hover:bg-muted hover:scale-105 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-all duration-300"
               >
                 Login
@@ -443,7 +443,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/auth/register"
+              href="/auth/login"
               className="inline-flex items-center justify-center rounded-md border border-background bg-transparent px-8 py-3 text-lg font-medium text-background shadow-sm hover:bg-background hover:text-foreground hover:scale-105 focus:outline-none focus:ring-2 focus:ring-background focus:ring-offset-2 focus:ring-offset-foreground transition-all duration-300"
             >
               Login

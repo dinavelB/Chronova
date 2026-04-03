@@ -29,7 +29,7 @@ export default function OtpForm() {
   const errorMessage = getErrorMessage(mutation.error);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
+    <div className="flex min-h-screen items-center justify-center bg-secondary">
       <Card className="w-full max-w-md shadow-xl border-0 rounded-2xl transition-all duration-300 hover:shadow-2xl">
         <CardHeader className="pb-6 pt-8">
           <div className="mx-auto w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-4">
@@ -142,11 +142,11 @@ export default function OtpForm() {
               )}
             </Button>
 
-            <div className="text-center text-sm text-gray-500 pt-2">
+            <div className="text-center text-sm text-gray-500 pt-2 ">
               Didn't receive the code?{" "}
               <button
                 type="button"
-                className="text-blue-700 hover:text-gray-900 font-medium hover:underline transition-colors"
+                className="text-blue-700 hover:text-gray-900 font-medium hover:underline transition-colors cursor-pointer"
                 onClick={() => {
                   // Add resend logic here if needed
                 }}
